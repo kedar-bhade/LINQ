@@ -46,6 +46,10 @@ namespace LINQ
             return 0;
         }
 
+        /// <summary>
+        /// This method consumes a sequence of numbers and prints the squares of the odd numbers in the sequence.
+        /// </summary>
+        /// <returns>Returns 0 after printing the squares of the odd numbers.</returns>
         internal static int ConsumeSequence()
         {
             #region consume-sequence
