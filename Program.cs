@@ -32,6 +32,16 @@ namespace LINQ
             };
         }
 
+        internal static int sameplemethod(){
+            var sequence = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            foreach(int i in sequence){
+                if(i%2 == 1)
+                {
+                    Console.WriteLine($"Squre of odd number {i} is {i*i}");
+                }
+            }
+        }
+
         internal static int QuerySyntax()
         {
             #region query-syntax
@@ -46,10 +56,6 @@ namespace LINQ
             return 0;
         }
 
-        /// <summary>
-        /// This method consumes a sequence of numbers and prints the squares of the odd numbers in the sequence.
-        /// </summary>
-        /// <returns>Returns 0 after printing the squares of the odd numbers.</returns>
         internal static int ConsumeSequence()
         {
             #region consume-sequence
