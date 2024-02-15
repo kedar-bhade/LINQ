@@ -34,6 +34,15 @@ namespace LINQ
 
         internal static int sameplemethod(){
             var sequence = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+        }
+
+        internal static int OddManOut(){
+             int[] numbers = { 2, 5, 8, 10, 11, 13, 15, 17, 20 };
             foreach(int i in sequence){
                 if(i%2 == 1)
                 {
