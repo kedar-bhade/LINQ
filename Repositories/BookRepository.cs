@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using LINQ.Models;
@@ -8,6 +9,12 @@ namespace LINQ.Repositories
     {
         private readonly List<Book> _books = new();
         private int _nextId = 1;
+        private readonly IAuthorRepository _authors;
+
+        public BookRepository(IAuthorRepository authors)
+        {
+            _authors = authors;
+        }
 
         public IEnumerable<Book> GetAll() => _books;
 
@@ -15,6 +22,11 @@ namespace LINQ.Repositories
 
         public Book Create(Book book)
         {
+            if (_authors.Get(book.AuthorId) == null)
+            {
+                throw new ArgumentException("Author does not exist", nameof(book.AuthorId));
+            }
+
             book.Id = _nextId++;
             _books.Add(book);
             return book;
@@ -25,6 +37,11 @@ namespace LINQ.Repositories
             var existing = Get(book.Id);
             if (existing != null)
             {
+                if (_authors.Get(book.AuthorId) == null)
+                {
+                    throw new ArgumentException("Author does not exist", nameof(book.AuthorId));
+                }
+
                 existing.Title = book.Title;
                 existing.AuthorId = book.AuthorId;
             }
