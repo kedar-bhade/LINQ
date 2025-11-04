@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2d6cdf, #6a5acd);
+            color: #1c1c1c;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 380px;
+            padding: 2.5rem 2.75rem;
+            border-radius: 16px;
+            box-shadow: 0 18px 38px rgba(28, 45, 94, 0.25);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-header h1 {
+            margin: 0 0 0.5rem;
+            font-size: 1.8rem;
+            color: #1d2748;
+        }
+
+        .login-header p {
+            margin: 0;
+            color: #647196;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1d2748;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ccd6f6;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #4c6ef5;
+            box-shadow: 0 0 0 4px rgba(76, 110, 245, 0.15);
+        }
+
+        .login-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .remember-me input {
+            margin-right: 0.5rem;
+        }
+
+        .forgot-password {
+            font-size: 0.9rem;
+            color: #4c6ef5;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover,
+        .forgot-password:focus {
+            text-decoration: underline;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: linear-gradient(135deg, #4c6ef5, #3949ab);
+            border: none;
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button[type="submit"]:hover,
+        button[type="submit"]:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 24px rgba(76, 110, 245, 0.25);
+        }
+
+        .signup-link {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+
+        .signup-link a {
+            color: #4c6ef5;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover,
+        .signup-link a:focus {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="login-container">
+        <header class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Sign in to access your library dashboard.</p>
+        </header>
+        <form action="/login" method="post" novalidate>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+            </div>
+            <div class="login-actions">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember" id="remember">
+                    Remember me
+                </label>
+                <a class="forgot-password" href="#">Forgot password?</a>
+            </div>
+            <button type="submit">Sign In</button>
+        </form>
+        <p class="signup-link">
+            New to the library? <a href="#">Create an account</a>
+        </p>
+    </main>
+</body>
+</html>
